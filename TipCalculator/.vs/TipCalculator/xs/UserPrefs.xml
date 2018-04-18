@@ -1,13 +1,16 @@
 ﻿<Properties StartupConfiguration="{C884D6E8-1D80-4029-B8E3-C8AE758E963A}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TipCalculator/Main.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TipCalculator/ViewController.cs">
     <Files>
-      <File FileName="TipCalculator/ViewController.cs" Line="1" Column="1" />
+      <File FileName="TipCalculator/ViewController.cs" Line="39" Column="72" />
       <File FileName="TipCalculator/Main.storyboard" />
+      <File FileName="TipCalculator/TipCalculator.cs" Line="8" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/ViewController.cs" relfile="TipCalculator/ViewController.cs" line="36" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

@@ -45,6 +45,22 @@ namespace TipCalculator
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel totalCheckAmountOutputLabel { get; set; }
 
+        [Action ("checkAmountInputTextField_ValueChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void checkAmountInputTextField_ValueChanged (UIKit.UITextField sender);
+
+        [Action ("serviceSlider_ValueChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void serviceSlider_ValueChanged (UIKit.UISlider sender);
+
+        [Action ("taxPercentInputTextField_ValueChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void taxPercentInputTextField_ValueChanged (UIKit.UITextField sender);
+
+        [Action ("taxToggle_ValueChanged:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void taxToggle_ValueChanged (UIKit.UISwitch sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (checkAmountInputTextField != null) {
