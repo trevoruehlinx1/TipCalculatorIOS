@@ -1,0 +1,12 @@
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\bin\iPhoneSimulator\Debug\TipCalculator.exe
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\bin\iPhoneSimulator\Debug\TipCalculator.pdb
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\coremlc\_PartialAppManifest.items
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\optimized\Entitlements.plist
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\optimized\
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\TipCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\TipCalculator.exe
+C:\Users\Trevor Uehlin\Documents\CS235IM Int Mobile App Dev IOS\Week 3\Lab 3\TipCalculator\TipCalculator\obj\iPhoneSimulator\Debug\TipCalculator.pdb
