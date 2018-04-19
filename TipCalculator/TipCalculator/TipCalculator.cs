@@ -5,7 +5,8 @@ namespace TipCalculator
     {
         public TipCalculator()
         {
-            
+
         }
+
     }
 }

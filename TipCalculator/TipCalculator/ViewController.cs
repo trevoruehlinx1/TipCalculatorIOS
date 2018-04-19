@@ -13,6 +13,9 @@ namespace TipCalculator
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            int sValue = (int)serviceSlider.Value;
+            tipPercetageOutputLabel.Text = sValue.ToString();
+            taxToggle.On = false;
             // Perform any additional setup after loading the view, typically from a nib.
         }
 
@@ -24,12 +27,32 @@ namespace TipCalculator
 
         partial void checkAmountInputTextField_ValueChanged(UITextField sender)
         {
-            string checkAmount = sender.Text;
+            if (sender.Text != "")
+            {
+                decimal? taxPercent = Convert.ToDecimal (sender.Text) / 100;
+                decimal? tipPercent = Convert.ToDecimal (tipPercetageOutputLabel.Text) / 100;
+                decimal? checkAmount = Convert.ToDecimal (checkAmountInputTextField.Text);
+                decimal? taxAmount = taxPercent * checkAmount;
+                decimal? tipAmount = tipPercent * checkAmount;
+                tipAmountOutputLabel.Text = tipAmount.ToString();
+                taxAmountOutputLabel.Text = (taxPercent * checkAmount).ToString();
+                totalCheckAmountOutputLabel.Text = (checkAmount + tipAmount + taxAmount).ToString();
+            }
         }
 
         partial void taxPercentInputTextField_ValueChanged(UITextField sender)
         {
-            throw new NotImplementedException();
+            if(sender.Text != "")
+            {
+                int? taxPercent = Convert.ToInt32(sender.Text) / 100;
+                int? tipPercent = Convert.ToInt32(tipPercetageOutputLabel.Text) / 100;
+                int? checkAmount = Convert.ToInt32(checkAmountInputTextField.Text);
+                int? taxAmount = taxPercent * checkAmount;
+                int? tipAmount = tipPercent * checkAmount;
+                tipAmountOutputLabel.Text = tipAmount.ToString();
+                taxAmountOutputLabel.Text = (taxPercent * checkAmount).ToString();
+                totalCheckAmountOutputLabel.Text = checkAmount + tipAmount + taxAmount.ToString();
+            }
         }
 
         partial void serviceSlider_ValueChanged(UISlider sender)
@@ -40,7 +63,17 @@ namespace TipCalculator
 
         partial void taxToggle_ValueChanged(UISwitch sender)
         {
-            throw new NotImplementedException();
+            if(sender.On)
+            {
+                taxPercentInputTextField.Enabled = true;
+                taxPercentInputTextField.Text = "5";
+            }
+            else
+            {
+                taxPercentInputTextField.Enabled = false;
+                taxPercentInputTextField.Text = "";
+                taxAmountOutputLabel.Text = "";
+            }
         }
     }
 }
