@@ -29,9 +29,48 @@ namespace TipCalculator
         {
             if (sender.Text != "")
             {
-                decimal? taxPercent = Convert.ToDecimal (sender.Text) / 100;
-                decimal? tipPercent = Convert.ToDecimal (tipPercetageOutputLabel.Text) / 100;
-                decimal? checkAmount = Convert.ToDecimal (checkAmountInputTextField.Text);
+                if(taxToggle.On)
+                {
+                    decimal? taxPercent = Convert.ToDecimal(taxPercentInputTextField.Text) / 100;
+                    decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
+                    decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
+                    decimal? taxAmount = taxPercent * checkAmount;
+                    decimal? tipAmount = tipPercent * checkAmount;
+
+                    string tipMoneyValue = String.Format("{0:C}", tipAmount);
+                    string taxMoneyValue = String.Format("{0:C}", taxAmount);
+                    string totalCheckMoneyValue = String.Format("{0:C}", checkAmount + tipAmount + taxAmount);
+
+                    tipAmountOutputLabel.Text = tipMoneyValue.ToString();
+                    totalCheckAmountOutputLabel.Text = totalCheckMoneyValue.ToString();
+                    taxAmountOutputLabel.Text = taxMoneyValue.ToString();
+                }
+                else
+                {
+                    decimal? taxPercent = 0;
+                    decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
+                    decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
+                    decimal? taxAmount = taxPercent * checkAmount;
+                    decimal? tipAmount = tipPercent * checkAmount;
+
+                    string tipMoneyValue = String.Format("{0:C}", tipAmount);
+                    string taxMoneyValue = String.Format("{0:C}", taxAmount);
+                    string totalCheckMoneyValue = String.Format("{0:C}", checkAmount + tipAmount + taxAmount);
+
+                    tipAmountOutputLabel.Text = tipMoneyValue.ToString();
+                    totalCheckAmountOutputLabel.Text = totalCheckMoneyValue.ToString();
+                    taxAmountOutputLabel.Text = taxMoneyValue.ToString();
+                }
+            }
+        }
+
+        partial void taxPercentInputTextField_ValueChanged(UITextField sender)
+        {
+            if (sender.Text != "")
+            {
+                decimal? taxPercent = Convert.ToDecimal(checkAmountInputTextField.Text) / 100;
+                decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
+                decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
                 decimal? taxAmount = taxPercent * checkAmount;
                 decimal? tipAmount = tipPercent * checkAmount;
                 tipAmountOutputLabel.Text = tipAmount.ToString();
@@ -40,25 +79,42 @@ namespace TipCalculator
             }
         }
 
-        partial void taxPercentInputTextField_ValueChanged(UITextField sender)
-        {
-            if(sender.Text != "")
-            {
-                int? taxPercent = Convert.ToInt32(sender.Text) / 100;
-                int? tipPercent = Convert.ToInt32(tipPercetageOutputLabel.Text) / 100;
-                int? checkAmount = Convert.ToInt32(checkAmountInputTextField.Text);
-                int? taxAmount = taxPercent * checkAmount;
-                int? tipAmount = tipPercent * checkAmount;
-                tipAmountOutputLabel.Text = tipAmount.ToString();
-                taxAmountOutputLabel.Text = (taxPercent * checkAmount).ToString();
-                totalCheckAmountOutputLabel.Text = checkAmount + tipAmount + taxAmount.ToString();
-            }
-        }
-
         partial void serviceSlider_ValueChanged(UISlider sender)
         {
             int sValue = (int)sender.Value;
             tipPercetageOutputLabel.Text = sValue.ToString();
+                if(taxToggle.On)
+                {
+                    decimal? taxPercent = Convert.ToDecimal(taxPercentInputTextField.Text) / 100;
+                    decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
+                    decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
+                    decimal? taxAmount = taxPercent * checkAmount;
+                    decimal? tipAmount = tipPercent * checkAmount;
+
+                    string tipMoneyValue = String.Format("{0:C}", tipAmount);
+                    string taxMoneyValue = String.Format("{0:C}", taxAmount);
+                    string totalCheckMoneyValue = String.Format("{0:C}", checkAmount + tipAmount + taxAmount);
+
+                    tipAmountOutputLabel.Text = tipMoneyValue.ToString();
+                    totalCheckAmountOutputLabel.Text = totalCheckMoneyValue.ToString();
+                    taxAmountOutputLabel.Text = taxMoneyValue.ToString();
+                }
+                else
+                {
+                    decimal? taxPercent = 0;
+                    decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
+                    decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
+                    decimal? taxAmount = taxPercent * checkAmount;
+                    decimal? tipAmount = tipPercent * checkAmount;
+
+                    string tipMoneyValue = String.Format("{0:C}", tipAmount);
+                    string taxMoneyValue = String.Format("{0:C}", taxAmount);
+                    string totalCheckMoneyValue = String.Format("{0:C}", checkAmount + tipAmount + taxAmount);
+
+                    tipAmountOutputLabel.Text = tipMoneyValue.ToString();
+                    totalCheckAmountOutputLabel.Text = totalCheckMoneyValue.ToString();
+                    taxAmountOutputLabel.Text = taxMoneyValue.ToString();
+                }
         }
 
         partial void taxToggle_ValueChanged(UISwitch sender)
