@@ -27,6 +27,9 @@ namespace TipCalculator
 
         partial void checkAmountInputTextField_ValueChanged(UITextField sender)
         {
+            decimal? taxAmount = 0;
+            decimal? tipAmount = 0;
+            TipCalculator tc = new TipCalculator();
             if (sender.Text != "")
             {
                 if(taxToggle.On)
@@ -34,8 +37,9 @@ namespace TipCalculator
                     decimal? taxPercent = Convert.ToDecimal(taxPercentInputTextField.Text) / 100;
                     decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
                     decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
-                    decimal? taxAmount = taxPercent * checkAmount;
-                    decimal? tipAmount = tipPercent * checkAmount;
+                    taxAmount = tc.GetTaxAmount(taxPercent, checkAmount);
+                    tipAmount = tc.GetTipAmount(tipPercent, checkAmount);
+
 
                     string tipMoneyValue = String.Format("{0:C}", tipAmount);
                     string taxMoneyValue = String.Format("{0:C}", taxAmount);
@@ -50,8 +54,8 @@ namespace TipCalculator
                     decimal? taxPercent = 0;
                     decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
                     decimal? checkAmount = Convert.ToDecimal(checkAmountInputTextField.Text);
-                    decimal? taxAmount = taxPercent * checkAmount;
-                    decimal? tipAmount = tipPercent * checkAmount;
+                    taxAmount = tc.GetTaxAmount(taxPercent, checkAmount);
+                    tipAmount = tc.GetTipAmount(tipPercent, checkAmount);
 
                     string tipMoneyValue = String.Format("{0:C}", tipAmount);
                     string taxMoneyValue = String.Format("{0:C}", taxAmount);

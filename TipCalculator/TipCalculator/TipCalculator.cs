@@ -3,15 +3,23 @@ namespace TipCalculator
 {
     public class TipCalculator
     {
-        public string TaxPercentToDecimal(string taxP)
+        public decimal? GetTaxAmount(decimal? taxPercent, decimal? checkAmount)
         {
-            decimal? taxPercent = Convert.ToDecimal(taxP)/100;
-            return taxPercent.ToString();
+            decimal? taxAmount = 0;
+            taxAmount = taxPercent * checkAmount;
+            return taxAmount;
         }
-        public string TipPercentToDecimal(string tipP)
+        public decimal? GetTipAmount(decimal? tipPercent, decimal?checkAmount)
         {
-            decimal? tipPercent = Convert.ToDecimal(tipP) / 100;
-            return tipPercent.ToString();
+            decimal? tipAmount = 0;
+            tipAmount = tipPercent * checkAmount;
+            return tipAmount;
+        }
+        public decimal? GetTotalCheckAmount(decimal? tipAmount, decimal? taxAmount,decimal? checkAmount)
+        {
+            decimal? totalCheckAmount = 0;
+            totalCheckAmount = tipAmount + taxAmount + checkAmount;
+            return totalCheckAmount;
         }
     }
 }
