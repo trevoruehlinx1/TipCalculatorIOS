@@ -1,4 +1,4 @@
-/Users/student/Desktop/TU/TipCalculatorIOS/TipCalculator/TipCalculator/bin/iPhoneSimulator/Debug/TipCalculator.exe
+/Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/bin/iPhoneSimulator/Debug/TipCalculator.exe
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/mscorlib.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/../../64bits/Xamarin.iOS.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.8.0.20/lib/mono/Xamarin.iOS/System.dll

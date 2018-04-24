@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="TipCalculator/ViewController.cs">
     <Files>
       <File FileName="TipCalculator/Main.storyboard" />
-      <File FileName="TipCalculator/ViewController.cs" Line="34" Column="21" />
+      <File FileName="TipCalculator/ViewController.cs" Line="34" Column="14" />
       <File FileName="TipCalculator/TipCalculator.cs" Line="9" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
