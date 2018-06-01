@@ -1,11 +1,12 @@
 ﻿using System;
-
+using Foundation;
 using UIKit;
 
 namespace TipCalculator
 {
     public partial class ViewController : UIViewController
     {
+        NSObject observer = null;
         public ViewController(IntPtr handle) : base(handle)
         {
         }
@@ -18,11 +19,49 @@ namespace TipCalculator
             taxToggle.On = false;
             // Perform any additional setup after loading the view, typically from a nib.
         }
+		public override void ViewDidAppear(bool animated)
+		{
+            // Update the values shown in view 1 from the StandardUserDefaults
+            RefreshFields();
+
+            // Subscribe to the applicationWillEnterForeground notification
+            var app = UIApplication.SharedApplication;
+            // NSNotificationCenter.DefaultCenter.AddObserver (this, UIApplication.WillEnterForegroundNotification, "ApplicationWillEnterForeground", app);
+            // NSNotificationCenter.DefaultCenter.AddObserver (UIApplication.WillEnterForegroundNotification, ApplicationWillEnterForeground);
+            observer = NSNotificationCenter.DefaultCenter.AddObserver(aName: UIApplication.WillEnterForegroundNotification, notify: ApplicationWillEnterForeground, fromObject: app);
+			base.ViewDidAppear(animated);
+		}
+
+        partial void SettingsButton_TouchUpInside(UIButton sender)
+        {
+            UIApplication.SharedApplication.OpenUrl(new NSUrl(UIApplication.OpenSettingsUrlString));
+        }
 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            NSNotificationCenter.DefaultCenter.RemoveObserver(observer);
+        }
+        private void RefreshFields()
+        {
+            string denomination = "";
+            NSUserDefaults defaults = NSUserDefaults.StandardUserDefaults;
+
+            serviceSlider.Value = defaults.FloatForKey(Constants.SERVICE_SLIDER);
+            taxPercentInputTextField.Text = defaults.StringForKey(Constants.TAX_PERCENTAGE);
+            taxToggle.Enabled = defaults.BoolForKey(Constants.TAX_TOGGLE);
+            denomination = defaults.StringForKey(Constants.DENOMINATION);
+        }
+        private void ApplicationWillEnterForeground(NSNotification notification)
+        {
+            var defaults = NSUserDefaults.StandardUserDefaults;
+            defaults.Synchronize();
+            RefreshFields();
         }
 
         partial void checkAmountInputTextField_ValueChanged(UITextField sender)
@@ -104,7 +143,7 @@ namespace TipCalculator
             int sValue = (int)sender.Value;
             tipPercetageOutputLabel.Text = sValue.ToString();
 
-                if(taxToggle.On)
+            if (taxToggle.On && taxToggle.Enabled == true)
                 {
                 decimal? taxPercent = Convert.ToDecimal(taxPercentInputTextField.Text) / 100;
                 decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;

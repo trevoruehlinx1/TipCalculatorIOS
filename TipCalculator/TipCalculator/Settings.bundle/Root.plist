@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Set default slider values</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>Key</key>
+			<string>serviceSlider</string>
+			<key>MinimumValue</key>
+			<real>0</real>
+			<key>MaximumValue</key>
+			<real>20</real>
+			<key>DefaultValue</key>
+			<real>10</real>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Tax Percentage</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Tax %</string>
+			<key>Key</key>
+			<string>taxPercentage</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>TaxToggle</string>
+			<key>Key</key>
+			<string>taxToggle</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<array>
+				<string>$</string>
+				<string>mex$</string>
+				<string>E$</string>
+			</array>
+			<key>Title</key>
+			<string>Denomination</string>
+			<key>Key</key>
+			<string>Key</string>
+		</dict>
+	</array>
+</dict>
+</plist>

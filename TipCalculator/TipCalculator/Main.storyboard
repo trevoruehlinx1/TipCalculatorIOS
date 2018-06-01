@@ -169,7 +169,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4056" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="$">
-                                <rect key="frame" x="181" y="136" width="12" height="21"/>
+                                <rect key="frame" x="159" y="136" width="34" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -182,6 +182,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8120" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="147" y="260" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="SettingsButton_TouchUpInside:" destination="BYZ-38-t0r" id="8121" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -194,6 +202,8 @@
                         <outlet property="taxPercentInputTextField" destination="1330" id="name-outlet-1330"/>
                         <outlet property="checkAmountInputTextField" destination="449" id="name-outlet-449"/>
                         <outlet property="serviceSlider" destination="451" id="name-outlet-451"/>
+                        <outlet property="SettingsButton" destination="8120" id="name-outlet-8120"/>
+                        <outlet property="CheckAmountDenomLabel" destination="4056" id="name-outlet-4056"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

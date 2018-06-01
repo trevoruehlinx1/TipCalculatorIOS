@@ -15,11 +15,19 @@ namespace TipCalculator
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel CheckAmountDenomLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField checkAmountInputTextField { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider serviceSlider { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SettingsButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -53,6 +61,10 @@ namespace TipCalculator
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void serviceSlider_ValueChanged (UIKit.UISlider sender);
 
+        [Action ("SettingsButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void SettingsButton_TouchUpInside (UIKit.UIButton sender);
+
         [Action ("taxPercentInputTextField_ValueChanged:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void taxPercentInputTextField_ValueChanged (UIKit.UITextField sender);
@@ -63,6 +75,11 @@ namespace TipCalculator
 
         void ReleaseDesignerOutlets ()
         {
+            if (CheckAmountDenomLabel != null) {
+                CheckAmountDenomLabel.Dispose ();
+                CheckAmountDenomLabel = null;
+            }
+
             if (checkAmountInputTextField != null) {
                 checkAmountInputTextField.Dispose ();
                 checkAmountInputTextField = null;
@@ -71,6 +88,11 @@ namespace TipCalculator
             if (serviceSlider != null) {
                 serviceSlider.Dispose ();
                 serviceSlider = null;
+            }
+
+            if (SettingsButton != null) {
+                SettingsButton.Dispose ();
+                SettingsButton = null;
             }
 
             if (taxAmountOutputLabel != null) {

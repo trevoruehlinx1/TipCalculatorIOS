@@ -22,3 +22,5 @@ C:/Users/Trevor Uehlin/Documents/CS235IM Int Mobile App Dev IOS/Week 3/Lab 3/Tip
 /Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.2/coremlc/_BundleResourceWithLogicalName.items
 /Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.2/optimized/Entitlements.plist
 /Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.2/optimized/
+/Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/device-builds/iphone6.1-11.2/optimized/Settings.bundle/Root.plist
+/Users/student/Desktop/tu/TipCalculatorIOS/TipCalculator/TipCalculator/obj/iPhoneSimulator/Debug/TipCalculator.csprojResolveAssemblyReference.cache
