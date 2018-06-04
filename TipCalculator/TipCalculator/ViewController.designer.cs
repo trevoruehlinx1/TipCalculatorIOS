@@ -23,6 +23,14 @@ namespace TipCalculator
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel enterTaxPercentageLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton RefreshButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider serviceSlider { get; set; }
 
         [Outlet]
@@ -32,6 +40,10 @@ namespace TipCalculator
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel taxAmountOutputLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel taxIncludedLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -53,9 +65,17 @@ namespace TipCalculator
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel totalCheckAmountOutputLabel { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel TTALabel { get; set; }
+
         [Action ("checkAmountInputTextField_ValueChanged:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void checkAmountInputTextField_ValueChanged (UIKit.UITextField sender);
+
+        [Action ("RefreshButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void RefreshButton_TouchUpInside (UIKit.UIButton sender);
 
         [Action ("serviceSlider_ValueChanged:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -85,6 +105,16 @@ namespace TipCalculator
                 checkAmountInputTextField = null;
             }
 
+            if (enterTaxPercentageLabel != null) {
+                enterTaxPercentageLabel.Dispose ();
+                enterTaxPercentageLabel = null;
+            }
+
+            if (RefreshButton != null) {
+                RefreshButton.Dispose ();
+                RefreshButton = null;
+            }
+
             if (serviceSlider != null) {
                 serviceSlider.Dispose ();
                 serviceSlider = null;
@@ -98,6 +128,11 @@ namespace TipCalculator
             if (taxAmountOutputLabel != null) {
                 taxAmountOutputLabel.Dispose ();
                 taxAmountOutputLabel = null;
+            }
+
+            if (taxIncludedLabel != null) {
+                taxIncludedLabel.Dispose ();
+                taxIncludedLabel = null;
             }
 
             if (taxPercentInputTextField != null) {
@@ -123,6 +158,11 @@ namespace TipCalculator
             if (totalCheckAmountOutputLabel != null) {
                 totalCheckAmountOutputLabel.Dispose ();
                 totalCheckAmountOutputLabel = null;
+            }
+
+            if (TTALabel != null) {
+                TTALabel.Dispose ();
+                TTALabel = null;
             }
         }
     }

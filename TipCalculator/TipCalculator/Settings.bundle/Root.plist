@@ -11,16 +11,14 @@
 			<string>taxPercentage</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
-			<key>AutocapitalizationType</key>
-			<string>AllCharacters</string>
 			<key>KeyboardType</key>
-			<string>NumbersAndPunctuation</string>
+			<string>NumberPad</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Tax Toggle Enabled</string>
+			<string>Enable Tax Toggle</string>
 			<key>Key</key>
 			<string>taxToggle</string>
 			<key>DefaultValue</key>
@@ -45,6 +43,28 @@
 			<real>10</real>
 			<key>Title</key>
 			<string>Service Slider</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Background Color</string>
+			<key>Titles</key>
+			<array>
+				<string>white</string>
+				<string>blue</string>
+				<string>lightGrey</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>white</string>
+				<string>blue</string>
+				<string>lightGrey</string>
+			</array>
+			<key>Key</key>
+			<string>BGColor</string>
+			<key>DefaultValue</key>
+			<string>white</string>
 		</dict>
 	</array>
 </dict>

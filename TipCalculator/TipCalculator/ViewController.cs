@@ -15,21 +15,20 @@ namespace TipCalculator
         {
             base.ViewDidLoad();
             int sValue = (int)serviceSlider.Value;
+            taxPercentInputTextField.Text = "";
             tipPercetageOutputLabel.Text = sValue.ToString();
-            taxToggle.On = false;
-            View.BackgroundColor = UIColor.LightGray;
-
+            taxToggle.Enabled = false;
             // Perform any additional setup after loading the view, typically from a nib.
         }
 		public override void ViewDidAppear(bool animated)
 		{
             // Update the values shown in view 1 from the StandardUserDefaults
             RefreshFields();
+            if (taxToggle.On == false)
+                taxPercentInputTextField.Text = "";
 
             // Subscribe to the applicationWillEnterForeground notification
             var app = UIApplication.SharedApplication;
-            // NSNotificationCenter.DefaultCenter.AddObserver (this, UIApplication.WillEnterForegroundNotification, "ApplicationWillEnterForeground", app);
-            // NSNotificationCenter.DefaultCenter.AddObserver (UIApplication.WillEnterForegroundNotification, ApplicationWillEnterForeground);
             observer = NSNotificationCenter.DefaultCenter.AddObserver(aName: UIApplication.WillEnterForegroundNotification, notify: ApplicationWillEnterForeground, fromObject: app);
 			base.ViewDidAppear(animated);
 		}
@@ -49,16 +48,53 @@ namespace TipCalculator
             base.ViewWillDisappear(animated);
             NSNotificationCenter.DefaultCenter.RemoveObserver(observer);
         }
+
+        partial void RefreshButton_TouchUpInside(UIButton sender)
+        {
+            RefreshFields();
+        }
+
         private void RefreshFields()
         {
+            TipCalculator tc = new TipCalculator();
             string denomination = "";
             NSUserDefaults defaults = NSUserDefaults.StandardUserDefaults;
 
             serviceSlider.Value = defaults.FloatForKey(Constants.SERVICE_SLIDER);
-            taxPercentInputTextField.Text = defaults.StringForKey(Constants.TAX_PERCENTAGE);
             taxToggle.Enabled = defaults.BoolForKey(Constants.TAX_TOGGLE);
             denomination = defaults.StringForKey(Constants.DENOMINATION);
+
+            if (taxToggle.Enabled == false)
+            {
+                taxPercentInputTextField.Text = "0";
+                taxToggle.Hidden = true;
+                taxIncludedLabel.Hidden = true;
+                enterTaxPercentageLabel.Hidden = true;
+                taxPercentInputTextField.Hidden = true;
+                TTALabel.Hidden = true;
+                taxAmountOutputLabel.Hidden = true;
+            }
+            else
+            {
+                taxPercentInputTextField.Text = defaults.StringForKey(Constants.TAX_PERCENTAGE);
+                taxToggle.Hidden = false;
+                taxIncludedLabel.Hidden = false;
+                enterTaxPercentageLabel.Hidden = false;
+                taxPercentInputTextField.Hidden = false;
+                TTALabel.Hidden = false;
+                taxAmountOutputLabel.Hidden = false;
+            }
+                
+
             string color = defaults.StringForKey(Constants.BG_COLOR);
+            if (color == "lightGrey")
+                View.BackgroundColor = UIColor.LightGray;
+            if (color == "white")
+                View.BackgroundColor = UIColor.White;
+            if (color == "blue")
+                View.BackgroundColor = UIColor.Blue;
+            
+            
         }
         private void ApplicationWillEnterForeground(NSNotification notification)
         {
@@ -146,7 +182,7 @@ namespace TipCalculator
             int sValue = (int)sender.Value;
             tipPercetageOutputLabel.Text = sValue.ToString();
 
-            if (taxToggle.On && taxToggle.Enabled == true)
+            if (taxToggle.On == true && taxToggle.Enabled == true)
                 {
                 decimal? taxPercent = Convert.ToDecimal(taxPercentInputTextField.Text) / 100;
                 decimal? tipPercent = Convert.ToDecimal(tipPercetageOutputLabel.Text) / 100;
@@ -184,7 +220,6 @@ namespace TipCalculator
 
         partial void taxToggle_ValueChanged(UISwitch sender)
         {
-            RefreshFields();
             if(sender.On)
             {
                 var controller = UIAlertController.Create("Turn on taxes?", null, UIAlertControllerStyle.ActionSheet);

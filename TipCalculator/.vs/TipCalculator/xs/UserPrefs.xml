@@ -3,7 +3,7 @@
     <Files>
       <File FileName="TipCalculator/Settings.bundle/Root.plist" />
       <File FileName="TipCalculator/Constants.cs" Line="13" Column="50" />
-      <File FileName="TipCalculator/ViewController.cs" Line="226" Column="49" />
+      <File FileName="TipCalculator/ViewController.cs" Line="27" Column="44" />
       <File FileName="TipCalculator/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>

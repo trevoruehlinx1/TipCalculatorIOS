@@ -183,12 +183,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8120" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="147" y="260" width="46" height="30"/>
+                                <rect key="frame" x="22" y="47" width="77" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="SettingsButton_TouchUpInside:" destination="BYZ-38-t0r" id="8121" eventType="touchUpInside"/>
                                 </connections>
+                                <state key="normal" title="Settings"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8571" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="219" y="47" width="77" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="SettingsButton_TouchUpInside:" destination="8573" id="8572" eventType="touchUpInside"/>
+                                    <action selector="RefreshButton_TouchUpInside:" destination="BYZ-38-t0r" id="8798" eventType="touchUpInside"/>
+                                </connections>
+                                <state key="normal" title="Refresh"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,6 +213,10 @@
                         <outlet property="serviceSlider" destination="451" id="name-outlet-451"/>
                         <outlet property="SettingsButton" destination="8120" id="name-outlet-8120"/>
                         <outlet property="CheckAmountDenomLabel" destination="4056" id="name-outlet-4056"/>
+                        <outlet property="RefreshButton" destination="8571" id="name-outlet-8571"/>
+                        <outlet property="taxIncludedLabel" destination="1331" id="name-outlet-1331"/>
+                        <outlet property="enterTaxPercentageLabel" destination="1122" id="name-outlet-1122"/>
+                        <outlet property="TTALabel" destination="1123" id="name-outlet-1123"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
