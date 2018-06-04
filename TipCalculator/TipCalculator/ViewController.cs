@@ -17,6 +17,8 @@ namespace TipCalculator
             int sValue = (int)serviceSlider.Value;
             tipPercetageOutputLabel.Text = sValue.ToString();
             taxToggle.On = false;
+            View.BackgroundColor = UIColor.LightGray;
+
             // Perform any additional setup after loading the view, typically from a nib.
         }
 		public override void ViewDidAppear(bool animated)
@@ -56,6 +58,7 @@ namespace TipCalculator
             taxPercentInputTextField.Text = defaults.StringForKey(Constants.TAX_PERCENTAGE);
             taxToggle.Enabled = defaults.BoolForKey(Constants.TAX_TOGGLE);
             denomination = defaults.StringForKey(Constants.DENOMINATION);
+            string color = defaults.StringForKey(Constants.BG_COLOR);
         }
         private void ApplicationWillEnterForeground(NSNotification notification)
         {
@@ -181,6 +184,7 @@ namespace TipCalculator
 
         partial void taxToggle_ValueChanged(UISwitch sender)
         {
+            RefreshFields();
             if(sender.On)
             {
                 var controller = UIAlertController.Create("Turn on taxes?", null, UIAlertControllerStyle.ActionSheet);
@@ -202,7 +206,7 @@ namespace TipCalculator
                 PresentViewController(controller, true, null);
 
                 taxPercentInputTextField.Enabled = true;
-                taxPercentInputTextField.Text = "5";
+                RefreshFields();
             }
             else
             {

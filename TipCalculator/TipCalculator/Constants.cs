@@ -10,5 +10,6 @@ namespace TipCalculator
         public const string TAX_PERCENTAGE = "taxPercentage";
         public const string TAX_TOGGLE = "taxToggle";
         public const string DENOMINATION = "Denomination";
+        public const string BG_COLOR = "BGColor";
     }
 }

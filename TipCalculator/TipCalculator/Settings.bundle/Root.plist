@@ -5,42 +5,22 @@
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Set default slider values</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSSliderSpecifier</string>
-			<key>Key</key>
-			<string>serviceSlider</string>
-			<key>MinimumValue</key>
-			<real>0</real>
-			<key>MaximumValue</key>
-			<real>20</real>
-			<key>DefaultValue</key>
-			<real>10</real>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>Tax Percentage</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
-			<key>Title</key>
-			<string>Tax %</string>
 			<key>Key</key>
 			<string>taxPercentage</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>AutocapitalizationType</key>
+			<string>AllCharacters</string>
+			<key>KeyboardType</key>
+			<string>NumbersAndPunctuation</string>
 		</dict>
 		<dict>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>TaxToggle</string>
+			<string>Tax Toggle Enabled</string>
 			<key>Key</key>
 			<string>taxToggle</string>
 			<key>DefaultValue</key>
@@ -48,15 +28,23 @@
 		</dict>
 		<dict>
 			<key>Type</key>
-			<array>
-				<string>$</string>
-				<string>mex$</string>
-				<string>E$</string>
-			</array>
+			<string>PSGroupSpecifier</string>
 			<key>Title</key>
-			<string>Denomination</string>
+			<string>Service Slider Default Setting</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSSliderSpecifier</string>
+			<key>MaximumValue</key>
+			<integer>20</integer>
+			<key>MinimumValue</key>
+			<integer>0</integer>
 			<key>Key</key>
-			<string>Key</string>
+			<string>serviceSlider</string>
+			<key>DefaultValue</key>
+			<real>10</real>
+			<key>Title</key>
+			<string>Service Slider</string>
 		</dict>
 	</array>
 </dict>

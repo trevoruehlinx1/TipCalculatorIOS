@@ -88,8 +88,5 @@
     <BundleResource Include="Resources\F_B-Overview-7-Interior-Ocean-restaurant.jpg" />
     <BundleResource Include="Settings.bundle\Root.plist" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Settings.bundle\" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -2,6 +2,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="TipCalculator/Settings.bundle/Root.plist">
     <Files>
       <File FileName="TipCalculator/Settings.bundle/Root.plist" />
+      <File FileName="TipCalculator/Constants.cs" Line="13" Column="50" />
+      <File FileName="TipCalculator/ViewController.cs" Line="226" Column="49" />
+      <File FileName="TipCalculator/Main.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
